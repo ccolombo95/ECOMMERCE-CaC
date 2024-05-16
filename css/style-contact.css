@@ -1,0 +1,123 @@
+
+
+#customized-products-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    width: 80%;
+}
+
+
+#customized-products-image {
+    background-image: url("/assets/customized-products-image.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 950px;
+    min-width: 400px;
+}
+
+#customized-products-form img {
+    max-width: 440px;
+}
+
+#customized-products-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem ;
+    width: 100%;
+    height: 100%;
+}
+
+#customized-products-form form h1 {
+    margin: 0;
+}
+
+#customized-products-form form .form-group{
+    position: relative;
+    --color:rgba(87, 87, 87, 0.494);
+  
+}
+
+#customized-products-form form .form-group label {
+    font-family: "Archivo", sans-serif;
+    font-size: 15px;
+    color: var(--color);
+    cursor: pointer;
+    left: 4px;
+    top: 0;
+}
+
+#customized-products-form form .form-group .form-label {
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+    position: absolute;
+}
+
+#customized-products-form form .form-group label.label-image.selected,
+#customized-products-form form .form-group label.label-date.selected {
+    color: rgb(155, 125, 71);
+}
+
+#customized-products-form form .form-group input,
+#customized-products-form form .form-group textarea,
+#customized-products-form form .form-group select {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color);
+    font-size: 16px;
+    font-family: "Courgette", cursive;
+    font-style: normal;
+    padding: .6rem .2rem;
+}
+
+
+#customized-products-form form .form-group .form-input:focus,
+#customized-products-form form .form-group .form-upload:hover,
+#customized-products-form form .form-group .form-input-date:hover {
+    border-bottom: 1px solid rgb(155, 125, 71);
+}
+#customized-products-form form .form-group .form-input:focus  ~ .form-label,
+#customized-products-form form .form-group .form-input:not(:placeholder-shown) ~ .form-label,
+#customized-products-form form .form-group .form-select:focus ~ .form-label,
+#customized-products-form form .form-group .form-select.selected ~ .form-label {
+    transform: translateY(-10px) scale(.9);
+    transform-origin: left top;
+    color: rgb(155, 125, 71);
+}
+
+#customized-products-form form .form-group input[type="file"] {
+    margin: .3rem 0 0 0;
+}
+
+::-webkit-file-upload-button {
+    color: white;
+    border: 2px solid rgba(193, 156, 88, 0.5);
+    background-color:  rgb(193, 156, 88);
+    padding: .5rem 1rem;
+    margin: 0 .6rem .5rem 0 ;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    font-family: "Archivo", sans-serif;
+    cursor: pointer;
+    
+}
+::-webkit-file-upload-button:hover {
+    background-color:  rgb(160, 129, 70);
+    transition: background-color 0.5s ease;
+}
+
+
+a { 
+    margin: 0 auto ;
+}
+span.button.form {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}

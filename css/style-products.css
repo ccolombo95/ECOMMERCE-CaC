@@ -1,0 +1,135 @@
+main#all-products {
+    flex-direction: row;
+    align-items: flex-start;
+}
+/* ASIDE BAR */
+aside {
+    width: 30%;
+    max-width: 260px;
+    margin: 5rem 0;
+    padding-left: 2.5rem;
+    color: rgb(160, 129, 70);
+ 
+    font-family: "Archivo", sans-serif;
+}
+aside h4 {
+    margin: 2.5rem 0 1.5rem 0;
+
+}
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+aside ul li {
+    margin: .5rem 0;
+
+}
+aside ul li a {
+    color: rgba(87, 87, 87, 0.494);
+}
+aside ul li a.selected{
+   color: rgb(160, 129, 70);
+   padding-left: 1rem ;
+   transition: padding-left .5s;
+}
+.line-link {
+    font-size: 0px;
+    color: rgb(160, 129, 70);
+  
+}
+a.selected .line-link {
+    font-size: 1rem;
+    transition: font-size .5s;
+}
+
+span#filter-i {
+    display: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width:860px){
+    span#filter-i {
+        display: flex;
+    }
+    aside {
+        position: absolute;
+        background-color: white;
+        left: 0;
+        visibility: hidden;
+        width: 0;
+   
+        height: 100%;
+        z-index: 1000;
+        transition: width .3s;
+
+    
+    }
+    aside.active {
+        visibility: visible;
+        transition: width .3s;
+        z-index: 1000;
+        width: 40%;
+        max-width: 100%;
+ 
+    }
+    @media screen and (max-width:450px){
+        aside.active {
+            width: 100%;
+        }
+    }
+
+}
+
+/* ASIDE BAR FIN*/
+
+/* PRODUCTS CONTAINER  */
+section#all-products-container {
+    width: 70%;
+}
+section#all-products-container .title-search {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+section#all-products-container .title-search .product-search {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+section#all-products-container .title-search .product-search input {
+    border: 2px solid  #57575754;
+    padding: .5rem;
+    width: 100%;
+    outline: none;
+    font-family: "Courgette", cursive;
+    font-style: normal;
+}
+
+section#all-products-container .title-search .product-search button {
+    padding: .375rem .5rem;
+
+}
+
+@media screen and (max-width:800px){
+    section#all-products-container{
+        width: 95%;
+        margin: 0;
+    }
+    @media screen and (max-width:660px){
+        section#all-products-container .title-search .product-search {
+            max-width: 70%;
+        }
+    }
+}
+/* PRODUCTS CONTAINER FIN */
+
