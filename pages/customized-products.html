@@ -4,59 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctenos</title>
-    <link rel="stylesheet" href="./../css/style-contact.css">
-    <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="/css/style-contact.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Courgette&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-
-    <header class="container justify-container-center">                
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./../assets/Logo.jpg" alt="Logo" class="logo-img">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>    
-    </header>
+    <header></header>
     <main>
         <section id="customized-products-form">
-            <div id="customized-products-image"></div>
-            <form id="contactForm" action="#">
+             <div id="customized-products-image"></div>
+            <form action="#">
                 <span class="punto-linea first">
                     <span class="linea"></span>
                 </span>
@@ -107,9 +66,12 @@
                 <div class="form-group">
                     <label for="image" class="label-image " >FOTO O ARCHIVO DE REFERENCIAS (JPG/PNG/PDF)</label>
                     <input type="file" name="image" id="image" class="form-upload" >
+
+
                 </div>
-                <div id="formMessage" ></div>
-                <button id="submitBtn" class="button form brown" style="width: 280px;margin: 0 auto;">ENVIAR</button>
+         
+         
+                <a href="#"> <span class="button form brown"> ENVIAR </span></a>
             </form>
             <span class="punto-linea v">
                 <span class="punto"></span>
@@ -119,17 +81,16 @@
         </section>
         
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
         const selectEventElement = document.getElementById('event');
         const selectProductElement = document.getElementById('product-select');
+
+
         const imageElement = document.getElementById('image');
         const labelImageElement = document.querySelector(".label-image");
+
         const dateElement = document.getElementById('date');
         const labelDateElement = document.querySelector(".label-date");
-        const submitBtn = document.getElementById('submitBtn');
-        const formMessage = document.getElementById('formMessage');
-        const form = document.getElementById('contactForm');
 
         selectEventElement.addEventListener('change', function() {
             if (selectEventElement.value !== 'none') {
@@ -141,57 +102,21 @@
                 selectProductElement.classList.toggle('selected');    
             } 
         });
+
+
         imageElement.addEventListener('change', function() {
             labelImageElement.classList.toggle('selected');
             imageElement.classList.toggle('selected');
         });
+
         dateElement.addEventListener('change', function() {
             labelDateElement.classList.toggle('selected');
             dateElement.classList.toggle('selected');
         });
 
-        // Función para validar el formato del email
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
 
-        submitBtn.addEventListener('click', function(event) {
-            event.preventDefault();
-            formMessage.textContent = '';
-            let isFormComplete = true;
-            const email = document.getElementById('email').value;
-
-            const inputs = form.querySelectorAll('input, select, textarea');
-            inputs.forEach(input => {
-                if (!input.value || input.value === 'none') {
-                    isFormComplete = false;
-                }
-            });
-
-            // Validar email
-            if (!validateEmail(email)) {
-                isFormComplete = false;
-                formMessage.style.color = 'rgb(121, 11, 11)';
-                formMessage.style.backgroundColor= 'rgba(255, 109, 109, 0.3)';
-                formMessage.textContent = 'El email ingresado no es válido';
-            }
-
-            if (isFormComplete) {
-                formMessage.style.color = 'rgb(11, 121, 22)';
-                formMessage.style.backgroundColor= 'rgba(100, 236, 136, 0.3)';
-                formMessage.style.display = 'flex';
-                formMessage.textContent = 'Muchas gracias por contactarnos!';
-            } else {
-                formMessage.style.color = 'rgb(121, 11, 11)';
-                formMessage.style.backgroundColor= 'rgba(255, 109, 109, 0.3)';
-                formMessage.style.display = 'flex';
-                if (formMessage.textContent === '') {
-                    formMessage.textContent = 'Quedan datos por completar';
-                }
-            }
-        });
     </script>
 
+    
 </body>
 </html>
