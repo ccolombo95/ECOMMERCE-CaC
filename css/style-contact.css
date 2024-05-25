@@ -1,5 +1,3 @@
-
-
 #customized-products-form {
     display: flex;
     flex-direction: row;
@@ -9,7 +7,9 @@
     width: 80%;
 }
 
-
+#customized-products-form .error-message {
+    color: black;
+}
 #customized-products-image {
     background-image: url("/assets/customized-products-image.jpg");
     background-size: 100%;
@@ -120,4 +120,35 @@ a {
 span.button.form {
     padding-left: 3rem;
     padding-right: 3rem;
+}
+
+@media screen and (max-width:860px){
+    #customized-products-form {
+        flex-direction: column;
+    }
+    
+    
+    #customized-products-image {
+        background-position: 50%;
+        min-height: 250px;
+    }
+
+    #customized-products-form form {
+        flex-direction: column;
+    }
+    .punto-linea .linea {
+        display: inline-flex;
+        width: 80%;
+
+    }
+    .punto-linea.first {
+        align-self: center;
+        transform: translateX(-45px);
+        min-width: 100%;
+    }
+    .punto-linea.v {
+        visibility: hidden;
+
+    }
+
 }
