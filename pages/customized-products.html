@@ -150,17 +150,32 @@
             dateElement.classList.toggle('selected');
         });
 
+        // Función para validar el formato del email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
         submitBtn.addEventListener('click', function(event) {
             event.preventDefault();
             formMessage.textContent = '';
             let isFormComplete = true;
-            
+            const email = document.getElementById('email').value;
+
             const inputs = form.querySelectorAll('input, select, textarea');
             inputs.forEach(input => {
                 if (!input.value || input.value === 'none') {
                     isFormComplete = false;
                 }
             });
+
+            // Validar email
+            if (!validateEmail(email)) {
+                isFormComplete = false;
+                formMessage.style.color = 'rgb(121, 11, 11)';
+                formMessage.style.backgroundColor= 'rgba(255, 109, 109, 0.3)';
+                formMessage.textContent = 'El email ingresado no es válido';
+            }
 
             if (isFormComplete) {
                 formMessage.style.color = 'rgb(11, 121, 22)';
@@ -171,7 +186,9 @@
                 formMessage.style.color = 'rgb(121, 11, 11)';
                 formMessage.style.backgroundColor= 'rgba(255, 109, 109, 0.3)';
                 formMessage.style.display = 'flex';
-                formMessage.textContent = 'Quedan datos por completar';
+                if (formMessage.textContent === '') {
+                    formMessage.textContent = 'Quedan datos por completar';
+                }
             }
         });
     </script>
