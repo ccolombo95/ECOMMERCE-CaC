@@ -7,7 +7,9 @@
     width: 80%;
 }
 
-
+#customized-products-form .error-message {
+    color: black;
+}
 #customized-products-image {
     background-image: url("/assets/customized-products-image.jpg");
     background-size: 100%;

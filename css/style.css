@@ -44,7 +44,7 @@ a {
     text-decoration: none !important;
     color: rgb(26,26,26) !important;
 }
-input {
+input, select {
     outline: none;
 }
 .punto-linea {
@@ -119,8 +119,15 @@ input {
     transition: background-color 0.5s ease;
 }
 
-
-
+#formMessage {
+    display: none;
+    justify-content: center;
+    text-align: center; 
+    margin: 0px auto;
+    padding: .3rem 0;
+    border-radius: 10px;
+    width: 280px;
+}
 
 @media screen and (max-width:500px){
     section {

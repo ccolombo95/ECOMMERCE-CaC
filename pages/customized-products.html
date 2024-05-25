@@ -55,8 +55,8 @@
     </header>
     <main>
         <section id="customized-products-form">
-             <div id="customized-products-image"></div>
-            <form action="#">
+            <div id="customized-products-image"></div>
+            <form id="contactForm" action="#">
                 <span class="punto-linea first">
                     <span class="linea"></span>
                 </span>
@@ -107,12 +107,9 @@
                 <div class="form-group">
                     <label for="image" class="label-image " >FOTO O ARCHIVO DE REFERENCIAS (JPG/PNG/PDF)</label>
                     <input type="file" name="image" id="image" class="form-upload" >
-
-
                 </div>
-         
-         
-                <a href="#"> <span class="button form brown"> ENVIAR </span></a>
+                <div id="formMessage" ></div>
+                <button id="submitBtn" class="button form brown" style="width: 280px;margin: 0 auto;">ENVIAR</button>
             </form>
             <span class="punto-linea v">
                 <span class="punto"></span>
@@ -126,13 +123,13 @@
     <script>
         const selectEventElement = document.getElementById('event');
         const selectProductElement = document.getElementById('product-select');
-
-
         const imageElement = document.getElementById('image');
         const labelImageElement = document.querySelector(".label-image");
-
         const dateElement = document.getElementById('date');
         const labelDateElement = document.querySelector(".label-date");
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+        const form = document.getElementById('contactForm');
 
         selectEventElement.addEventListener('change', function() {
             if (selectEventElement.value !== 'none') {
@@ -144,21 +141,40 @@
                 selectProductElement.classList.toggle('selected');    
             } 
         });
-
-
         imageElement.addEventListener('change', function() {
             labelImageElement.classList.toggle('selected');
             imageElement.classList.toggle('selected');
         });
-
         dateElement.addEventListener('change', function() {
             labelDateElement.classList.toggle('selected');
             dateElement.classList.toggle('selected');
         });
 
+        submitBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            formMessage.textContent = '';
+            let isFormComplete = true;
+            
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                if (!input.value || input.value === 'none') {
+                    isFormComplete = false;
+                }
+            });
 
+            if (isFormComplete) {
+                formMessage.style.color = 'rgb(11, 121, 22)';
+                formMessage.style.backgroundColor= 'rgba(100, 236, 136, 0.3)';
+                formMessage.style.display = 'flex';
+                formMessage.textContent = 'Muchas gracias por contactarnos!';
+            } else {
+                formMessage.style.color = 'rgb(121, 11, 11)';
+                formMessage.style.backgroundColor= 'rgba(255, 109, 109, 0.3)';
+                formMessage.style.display = 'flex';
+                formMessage.textContent = 'Quedan datos por completar';
+            }
+        });
     </script>
 
-    
 </body>
 </html>
