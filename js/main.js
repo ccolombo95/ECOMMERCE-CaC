@@ -41,6 +41,17 @@ buttonsProductView.forEach(function(buttonProductView) {
     });
 
 });
+//Cambio de imagenes
+const bgElement = document.querySelector('.product-card-image.bg');
+const smElements = document.querySelectorAll('.product-card-image.sm');
+
+smElements.forEach((element) => {
+    element.addEventListener('mouseover', () => {
+        bgElement.style.backgroundImage = element.style.backgroundImage;
+        bgElement.style.transition = 'background-image .5s ';
+
+    });
+});
 
 //ASide menu
 function toggleMenu() {
