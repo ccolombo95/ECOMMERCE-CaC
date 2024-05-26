@@ -136,6 +136,32 @@ input, select {
     }
 
 }
+
+/* Daily offers */
+#daily-offers .container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 300px;
+    width: 100%;
+    padding: 1rem 0 2rem 0;
+
+
+    background-size: 100%;
+    background-position: 50%;
+
+}
+
+#daily-offer .container .text p {
+
+    font-family: "Courgette", cursive;
+    font-style: normal;
+
+}
+
+/* Fin dailey offers */
 /* PRODUCTS */
 
 #products-main {
@@ -406,3 +432,49 @@ div#product-view {
 }
 
 /* END CUSTOMIZED PRODUCTS */
+
+/* Footer */
+.container .blanco{
+    color: rgb(255, 255, 255);
+
+}
+.container .copy{
+    margin-top: 10;
+}
+/*Footer*/
+/*:::::Pie de Pagina*/
+
+.container .redes{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:45px;
+    padding: 45px 0px;
+    text-align: center;
+}
+.container .redes .box logo h2{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.container .redes .box h2{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.container .redes .box p{
+    margin-bottom: 10px;
+}
+.container .redes .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    
+    margin-right: 10px;
+    background-color: #e3ecf6;
+    text-align: center;
+    transition: all 300ms ease;
+}
