@@ -515,7 +515,7 @@ div#product-view {
 }
 /* FIN ICONO BAG */
 /* BAG BAR */
-sidebar#shopping-cart-bar {
+sidebar#shopping-cart-bar.index {
     display: flex;
     flex-direction: column;
     align-items: flex-end ;
@@ -538,7 +538,7 @@ sidebar#shopping-cart-bar {
 
 
 }
-sidebar#shopping-cart-bar.active {
+sidebar#shopping-cart-bar.index.active {
     visibility: visible;
     opacity: 1;
     width: 100%;

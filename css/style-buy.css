@@ -1,0 +1,35 @@
+/* Form Side */
+#buy-section {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 80%;
+    margin: 3rem auto;
+
+}
+
+#buy-form {
+    width: 50%;
+}
+
+
+/* BAG SIDE */
+sidebar#shopping-cart-bar.buy-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end ;
+    justify-content: flex-start;
+   
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    padding: 0 2rem ;
+}
+
+sidebar#shopping-cart-bar.buy-form a {
+    width: 100%;
+    margin: 2rem 0;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}

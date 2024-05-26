@@ -24,7 +24,7 @@
     max-width: 440px;
 }
 
-#customized-products-form form {
+form {
     display: flex;
     flex-direction: column;
     gap: 2.5rem ;
@@ -32,17 +32,17 @@
     height: 100%;
 }
 
-#customized-products-form form h1 {
+form h1 {
     margin: 0;
 }
 
-#customized-products-form form .form-group{
+form .form-group{
     position: relative;
     --color:rgba(87, 87, 87, 0.494);
   
 }
 
-#customized-products-form form .form-group label {
+form .form-group label {
     font-family: "Archivo", sans-serif;
     font-size: 15px;
     color: var(--color);
@@ -51,25 +51,25 @@
     top: 0;
 }
 
-#customized-products-form form .form-group .form-label {
+form .form-group .form-label {
     transform: translateY(10px);
     transition: transform .5s, color .3s;
     position: absolute;
 }
 
-#customized-products-form form .form-group.checkbox .form-label {
+form .form-group.checkbox .form-label {
     transform: translateY(0px);
 
 }
 
-#customized-products-form form .form-group label.label-image.selected,
-#customized-products-form form .form-group label.label-date.selected {
+form .form-group label.label-image.selected,
+form .form-group label.label-date.selected {
     color: rgb(155, 125, 71);
 }
 
-#customized-products-form form .form-group input,
-#customized-products-form form .form-group textarea,
-#customized-products-form form .form-group select {
+form .form-group input,
+form .form-group textarea,
+form .form-group select {
     width: 100%;
     background: none;
     border: none;
@@ -82,21 +82,21 @@
 }
 
 
-#customized-products-form form .form-group .form-input:focus,
-#customized-products-form form .form-group .form-upload:hover,
-#customized-products-form form .form-group .form-input-date:hover {
+form .form-group .form-input:focus,
+form .form-group .form-upload:hover,
+form .form-group .form-input-date:hover {
     border-bottom: 1px solid rgb(155, 125, 71);
 }
-#customized-products-form form .form-group .form-input:focus  ~ .form-label,
-#customized-products-form form .form-group .form-input:not(:placeholder-shown) ~ .form-label,
-#customized-products-form form .form-group .form-select:focus ~ .form-label,
-#customized-products-form form .form-group .form-select.selected ~ .form-label {
+form .form-group .form-input:focus  ~ .form-label,
+form .form-group .form-input:not(:placeholder-shown) ~ .form-label,
+form .form-group .form-select:focus ~ .form-label,
+form .form-group .form-select.selected ~ .form-label {
     transform: translateY(-10px) scale(.9);
     transform-origin: left top;
     color: rgb(155, 125, 71);
 }
 
-#customized-products-form form .form-group input[type="file"] {
+form .form-group input[type="file"] {
     margin: .3rem 0 0 0;
 }
 
