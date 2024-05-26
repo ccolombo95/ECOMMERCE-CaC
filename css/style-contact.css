@@ -57,6 +57,11 @@
     position: absolute;
 }
 
+#customized-products-form form .form-group.checkbox .form-label {
+    transform: translateY(0px);
+
+}
+
 #customized-products-form form .form-group label.label-image.selected,
 #customized-products-form form .form-group label.label-date.selected {
     color: rgb(155, 125, 71);

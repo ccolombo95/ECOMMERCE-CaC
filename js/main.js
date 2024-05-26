@@ -67,3 +67,26 @@ function toggleMenu() {
     menuUser.classList.toggle('show');
     document.querySelector('.flecha').classList.toggle('active');
   }
+
+  //Carrito de compras
+  const bags = document.querySelectorAll(".bag-shopping-sm");
+  const numberBag = document.getElementById("number-bag");
+
+  bags.forEach((bag) => {
+      bag.addEventListener("click", function(){
+          numberBag.classList.toggle("active");
+
+      })
+  })
+
+  const iconCart = document.getElementById("icon-cart");
+  const closeX = document.getElementById("close-x");
+  const iconCartBag = document.getElementById("icon-cart-bag");
+  const cartBar = document.getElementById("shopping-cart-bar");
+
+  iconCart.addEventListener("click", function(){
+          cartBar.classList.toggle("active");
+          closeX.classList.toggle("active");
+          iconCartBag.classList.toggle("desactive");
+
+  })

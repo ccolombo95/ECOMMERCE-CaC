@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./../../../css/style-admin.css">
-  <title>Categorías</title>
+  <title>Document</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Courgette&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/jpg" href="/assets/favicon.png"/>
 </head>
 <body>
   <header>
@@ -29,7 +29,7 @@
       </div>
   
       <a href="/">
-        <img id='NavBarAdminlogo' src="./../../assets/Logo.jpg" alt="Logo" />
+        <img id='NavBarAdminlogo' src="./../../assets/logo.png" alt="Logo" />
       </a>
   
       <div id="UserContainer">
@@ -47,7 +47,7 @@
   </header>
   <div id="BodyContainerAdmin">
     <div class="BodyContainerSection">
-      <h1>Crear categoría</h1>
+      <h1>Editar producto</h1>
       <form id="FormAdmin">
         <input
           type="text"
@@ -56,15 +56,40 @@
           placeholder="Producto"
           required
         />
-
+        <textarea
+          name="descripcion"
+          id="descripcion"
+          cols="30"
+          rows="10"
+          placeholder="Descripción"
+        ></textarea>
         <div id="ImagenGroup">
-            <textarea
-            name="descripcion"
-            id="descripcion"
-            cols="30"
-            rows="10"
-            placeholder="Descripción"
-          ></textarea>
+          <div
+            class="FormImage"
+            style="
+              background: url(/assets/imgfilled.jpg);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;">
+              <input
+                type="file"
+                accept="image/*"
+                id="imagen_url"
+                name="imagen_url"/>
+          </div>
+          <div
+            class="FormImage"
+            style="
+              background: url(/assets/imgfilled.jpg);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;">
+              <input
+                type="file"
+                accept="image/*"
+                id="imagen_url"
+                name="imagen_url"/>
+          </div>
           <div
             class="FormImage"
             style="
@@ -79,6 +104,41 @@
                 name="imagen_url"/>
           </div>
         </div>
+
+        
+        <div class="SelectGroup">
+          <input
+            type="number"
+            id="price"
+            name="price"
+            placeholder="Precio x unidad"
+            required
+          />
+          <input
+            type="number"
+            id="stock"
+            name="stock"
+            placeholder="Stock"
+            required
+          />
+          <select id="Off" name="off" required>
+            <option value="">Oferta</option>
+            <option value="off">-</option>
+            <option value="diez">10%</option>
+            <option value="quince">15%</option>
+            <option value="veinte">20%</option>
+          </select>
+
+          <select id="category" name="category" required>
+            <option value="">Categoría</option>
+            <option value="cakes">Tortas y tartas</option>
+            <option value="Macarrones">Macarrones y alfajores</option>
+            <option value="Grande">Budín</option>
+          </select>
+
+        </div>
+       
+
 
         <button id="ButtonAdmin" type="submit">Enviar</button>
       </form>

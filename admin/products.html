@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./../../../css/style-admin.css">
-  <title>Categorías</title>
+  <title>Productos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Courgette&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/jpg" href="/assets/favicon.png"/>
 </head>
 <body>
   <header>
@@ -29,7 +29,7 @@
       </div>
   
       <a href="/">
-        <img id='NavBarAdminlogo' src="./../../assets/Logo.jpg" alt="Logo" />
+        <img id='NavBarAdminlogo' src="./../../assets/logo.png" alt="Logo" />
       </a>
   
       <div id="UserContainer">
@@ -38,7 +38,7 @@
           <p class="flecha" onclick="toggleMenuUser()">&#94;</p>
         </span>  
         <ul id='NavBarAdminList'>
-          <li class="NavBarAdminListItem"><a href="/" class='NavBarAdminLinks'>CERRAR SESIÓN</a></li>
+          <li class="NavBarAdminListItem"><a href="./../../index.html" class='NavBarAdminLinks'>CERRAR SESIÓN</a></li>
         </ul>
       </div>
   
@@ -47,50 +47,47 @@
   </header>
   <div id="BodyContainerAdmin">
     <div class="BodyContainerSection">
-      <h1>Categorías</h1>
+      <h1>Productos</h1>
       <div id="TableFunctions">
         <input 
           type="text" 
           placeholder="Buscar" 
           id="buscador" 
-          onkeyup="buscarCandidatos()"
         />
-        <button id="ButtonAdmin"><a href="./create-category.html">Nuevo</a></button>
-
+        <button id="ButtonAdmin"><a href="./create-product.html">Nuevo</a></button>
       </div>
 
       <table id="TableAdmin">
         <thead id="header">
           <tr>
-            <th>Categoria</th>
-            <th># productos</th>
-            <th></th>
+            <th>ID</th>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>precio</th>
+            <th>Stock</th>
+            <th>Categoría</th>
+            <th>Oferta</th>
+            <th>Estado</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-        
+          <!-- Ejemplo de fila estática -->
+          <tr >
+            <td>1</td>
+            <td><img src="./../../assets/product.jpg" style="width: 4rem;" alt=""></td>
+            <td class="Name">
+              Macarrones
+              <span class="Functions">
+                <a href="#" class="Delete">Eliminar</a>
+                <span class="FunctionsLine"></span>
+                <a href="./edit-product.html" class="Edit">Editar</a>
+              </span>
+            </td>
+            <td>$200</td>
+            <td>100</td>
             <td>Macarrones y alfajores</td>
-            <td>20</td>
-            <td><a href="#" class="DeleteX">X</a></td>
-          </tr>
-          <tr>
-      
-            <td>Tortas y tartas</td>
-            <td>5</td>
-            <td><a href="#" class="DeleteX">X</a></td>
-          </tr>
-          <tr>
-        
-            <td>Budines</td>
-            <td>2</td>
-            <td><a href="#" class="DeleteX">X</a></td>
-          </tr>
-          <tr>
-    
-            <td>Cupcakes</td>
-            <td>10</td>
-            <td><a href="#" class="DeleteX">X</a></td>
+            <td>10%</td>
+            <td>Activo</td>
           </tr>
           <!-- Añadir más filas según sea necesario -->
         </tbody>
@@ -98,6 +95,5 @@
     </div>
   </div>
   <script src="./../../js/main.js"></script>
-
 </body>
 </html>
