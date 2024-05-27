@@ -369,7 +369,20 @@ div#product-view {
 }
 #product-view #right-container #info-container p {
     font-size: 16px;
+    margin-top: 1rem;
 }
+form.product-options {
+    margin: 1rem 0;
+}
+.product-options  .form-group .form-label{
+    transform: translateY(-15px);
+}
+.product-options  .form-group select,
+.product-options  .form-group input  {
+    outline: none !important;
+    padding: .3rem .5rem;
+}
+
 
 
 #product-view #right-container #info-container #close-i {
@@ -391,7 +404,7 @@ div#product-view {
     display: inline-flex;
     justify-content: flex-end;
     align-items: center;
-
+    margin-top: 1.5rem;
     gap: .3rem;
 }
 #product-view #right-container #info-container #button-container span {

@@ -138,7 +138,7 @@ span.button.form {
         min-height: 250px;
     }
 
-    #customized-products-form form {
+    form {
         flex-direction: column;
     }
     .punto-linea .linea {
