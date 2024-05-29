@@ -1,6 +1,6 @@
 
 // IMAGES CARD
-let arrayImage = ["/assets/product.jpg", "/assets/product-2.jpg"];
+let arrayImage = ["./assets/product.jpg", "./assets/product-2.jpg"];
 let productCards = document.querySelectorAll(".product-card");
 
 productCards.forEach(function(productCard) {
