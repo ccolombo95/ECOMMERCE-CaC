@@ -1,3 +1,17 @@
+/*nav*/
+@media (max-width: 992px) {
+    .navbar .container-fluid {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .navbar-collapse {
+  
+        width: 100%;
+        text-align: left;
+    }
+}
+
 .carousel-image {
     height: 300px; 
     object-fit: cover;
@@ -450,6 +464,7 @@ form.product-options {
 
 }
 #customized-products .container .text {
+    padding: 15px;
     width: 80%;
     max-width: 600px;
     color: rgb(23, 22, 22);
