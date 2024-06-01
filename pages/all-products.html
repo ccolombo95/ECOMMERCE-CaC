@@ -23,9 +23,7 @@
         <nav class="container justify-container-center">                
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="./index.html">
-                        <img src="./../assets/logo.png" alt="Logo" class="logo-img" style="height: 90px;">
-                    </a>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -45,6 +43,12 @@
                             </li>
                         </ul>
                     </div>
+                    <a class="navbar-brand" href="./index.html" style="margin: 0 auto;">
+                        <img src="./../assets/logo.png" alt="Logo" class="logo-img" style="height: 90px;">
+                    </a>
+                    <span id="filter-i">
+                        <i class="fa-solid fa-sliders" style="color: #575757;"></i>
+                    </span>
                 </div>
             </nav>    
         </nav>
@@ -324,8 +328,7 @@
                 filterLink.classList.toggle('selected');
             });
         });
-        const aaside
-= document.getElementById("aside-bar");
+        const asideBar= document.getElementById("aside-bar");
         const filterI = document.getElementById("filter-i");
        
         filterI.addEventListener("click", function(event) {

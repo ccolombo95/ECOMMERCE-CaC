@@ -59,6 +59,7 @@ span#filter-i {
         position: absolute;
         background-color: white;
         left: 0;
+        top: 2.2rem;
         visibility: hidden;
         width: 0;
    

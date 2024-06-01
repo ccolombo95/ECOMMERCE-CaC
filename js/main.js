@@ -6,7 +6,8 @@ let products = [
         "precio": 350,
         "imagen1": "product.jpg",
         "imagen2": "product-2.jpg",
-        "imagen3": "pastel_chocolate-2.jpg"
+        "imagen3": "pastel_chocolate-2.jpg",
+        "off": "20%"
     },
     {
         "nombre": "Pastel de chocolate",
