@@ -1,8 +1,8 @@
-// IMAGES CARD
 document.addEventListener("DOMContentLoaded", () => {
     let productsContainer = document.getElementById('products-container');
     let filterLinks = document.querySelectorAll(".filter-link");
     let orderLinks = document.querySelectorAll(".order-link");
+    let offerLink = document.querySelector(".offer-link");
     let products = [
         {
             "id": 1,
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "imagen1": "TartaDeManzana.jpg",
             "imagen2": "TartaDeManzana2.jpg",
             "categoria": "Tortas y tartas",
-            "oferta": "-20%"
+            "oferta": ""
         },
         {
             "id": 2,
@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "precio": "29.420,00",
             "imagen1": "TartaDeChocolate.jpg",
             "imagen2": "TartaDeChocolate2.jpg",
-            "categoria": "Tortas y tartas"
+            "categoria": "Tortas y tartas",
+            "oferta": "-20%"
         },
         {
             "id": 3,
@@ -40,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "precio": "12.000,00",
             "imagen1": "Muffins.jpg",
             "imagen2": "Muffins2.jpg",
-            "categoria": "Cookies y cupcakes"
+            "categoria": "Cookies y cupcakes",
+            "oferta": ""
         },
         {
             "id": 5,
@@ -49,7 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "precio": "12.000,00",
             "imagen1": "Donas.jpg",
             "imagen2": "Donas2.jpg",
-            "categoria": "Cookies y cupcakes"
+            "categoria": "Cookies y cupcakes",
+            "oferta": ""
         },
         {
             "id": 6,
@@ -58,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "precio": "35.870,00",
             "imagen1": "PastelDeFresa.jpg",
             "imagen2": "PastelDeFresa2.jpg",
-            "categoria": "Tortas y tartas"
+            "categoria": "Tortas y tartas",
+            "oferta": ""
         },
         {
             "id": 7,
@@ -67,7 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "precio": "7.000,00",
             "imagen1": "turron.jpg",
             "imagen2": "turron2.jpg",
-            "categoria": "Alfajores y macarrones"
+            "categoria": "Alfajores y macarrones",
+            "oferta": ""
         },
         {
             "id": 8,
@@ -76,7 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "precio": "29.580,00",
             "imagen1": "Pavlova.jpg",
             "imagen2": "Pavlova2.jpg",
-            "categoria": "Tortas y tartas"
+            "categoria": "Tortas y tartas",
+            "oferta": ""
         }
     ];
 
@@ -98,7 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="#" class="button-product-view" data-product-id="${product.id}">
                         <div class="product-card-text-tittle">
                             <h5>${product.nombre}</h5>
-                            <h5>$${product.precio}</h5>
+                            <h5>
+                            $${product.precio} <br>
+                            <span style="font-size:16px; color:red;margin-left:2rem;">${product.oferta} </span> 
+                            </h5>
                         </div>
                         <p>${product.descripcion}</p>
                     </a>
@@ -158,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const productImageFirst = document.querySelector("#product-view .product-card-image.sm.first");
             const productImageSecond = document.querySelector("#product-view .product-card-image.sm.second");
             const productName = document.querySelector("#product-view .info-product h2");
+            const productOFF = document.querySelector("#product-view .info-product #off");
             const productPrice = document.querySelector("#product-view .info-product h3");
             const productDescription = document.querySelector("#product-view .info-product p");
 
@@ -168,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
             productImageFirst.style.backgroundImage = `url(${imagePath}${product.imagen1})`;
             productImageSecond.style.backgroundImage = `url(${imagePath}${product.imagen2})`;
             productName.textContent = product.nombre;
+            productOFF.textContent = product.oferta;
             productPrice.textContent = `$${product.precio}`;
             productDescription.textContent = product.descripcion;
         }
@@ -181,11 +192,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function filterProducts(category) {
-        if (category === 'Todos') {
-            return products;
+    function filterProducts(category, offer = false) {
+        let filteredProducts = products;
+
+        if (category !== 'Todos' && category !== 'OFERTAS') {
+            filteredProducts = filteredProducts.filter(product => product.categoria.trim() === category.trim());
         }
-        return products.filter(product => product.categoria.trim() === category.trim());
+
+        if (category === 'OFERTAS' || offer) {
+            filteredProducts = filteredProducts.filter(product => product.oferta.trim() !== "");
+        }
+
+        return filteredProducts;
     }
 
     orderLinks.forEach(link => {
@@ -204,8 +222,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    displayProducts(products);
+    if (offerLink) {
+        offerLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            displayProducts(filterProducts('OFERTAS', true));
+        });
+    }
+
+    // Detectar el parámetro en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get('filter');
+
+    if (filterParam === 'offers') {
+        displayProducts(filterProducts('OFERTAS', true));
+    } else {
+        displayProducts(products);
+    }
 });
+
+
 
 
 
