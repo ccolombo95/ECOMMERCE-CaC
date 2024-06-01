@@ -50,12 +50,11 @@ let products = [
         "imagen2": "turron2.jpg",
     },
     {
-        "nombre": "Tarta de limón",
-        "descripcion": "Tarta de limón con merengue italiano y base de masa quebrada.",
-        "precio": 300,
-        "imagen1": "product.jpg",
-        "imagen2": "product-2.jpg",
-        "imagen3": "pastel_chocolate-2.jpg"
+        "nombre": "Tarta Pavlova",
+        "descripcion": "Exquisito contraste de texturas, una capa exterior crujiente y delicada que envuelve un interior suave y esponjoso,una mezcla equilibrada de sabores dulces y frescos.",
+        "precio": "29.580,00",
+        "imagen1": "Pavlova.jpg",
+        "imagen2": "Pavlova2.jpg",
     }
 ];
 
