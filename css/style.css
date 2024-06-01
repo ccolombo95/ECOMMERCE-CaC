@@ -626,39 +626,48 @@ sidebar#shopping-cart-bar a {
 /* FIN BAG BAR */
 
 /* Footer */
-.container .blanco{
-    color: rgb(255, 255, 255);
-
-}
-.container .copy{
-    margin-top: 10;
-}
-/*Footer*/
-/*:::::Pie de Pagina*/
-
-.container .redes{
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F9FA;
     width: 100%;
-    max-width: 1200px;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:45px;
-    padding: 45px 0px;
-    text-align: center;
+    padding: 1rem 0;
+
 }
-.container .redes .box logo h2{
+
+footer .redes{
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 2rem auto;  
+    gap: 3rem; 
+}
+footer .redes .box {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+footer .redes .box logo h2{
     margin-bottom: 25px;
     font-size: 20px;
 }
 
-.container .redes .box h2{
+footer .redes .box h2{
     margin-bottom: 25px;
     font-size: 20px;
 }
-.container .redes .box p{
+footer .redes .box p{
     margin-bottom: 10px;
 }
-.container .redes .red-social a{
+footer .redes .red-social a{
     display: inline-block;
     text-decoration: none;
     width: 45px;
@@ -669,4 +678,21 @@ sidebar#shopping-cart-bar a {
     background-color: #e3ecf6;
     text-align: center;
     transition: all 300ms ease;
+}
+footer .copy {
+    border-top: 2px solid rgba(128, 128, 128, 0.244);
+    width: 100%;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+@media screen and (max-width:1000px) {
+    footer .redes .box {
+        max-width: 600px;
+        margin: 0 1rem;
+    }
+    footer .redes .box logo {
+        text-align: center;
+    }
 }
