@@ -14,7 +14,7 @@
 
 
 /* BAG SIDE */
-sidebar#shopping-cart-bar.buy-form {
+aside#shopping-cart-bar.buy-form {
     display: flex;
     flex-direction: column;
     align-items: flex-end ;
@@ -26,7 +26,7 @@ sidebar#shopping-cart-bar.buy-form {
     padding: 0 2rem ;
 }
 
-sidebar#shopping-cart-bar.buy-form a {
+aside#shopping-cart-bar.buy-form a {
     width: 100%;
     margin: 2rem 0;
     color: white;
