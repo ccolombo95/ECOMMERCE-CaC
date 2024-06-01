@@ -4,6 +4,7 @@ a:hover {
 main#all-products {
     flex-direction: row;
     align-items: flex-start;
+    padding-top: 120px;
 
 }
 /* ASIDE BAR */
@@ -62,7 +63,7 @@ span#filter-i {
         display: flex;
     }
     aside {
-        position: absolute;
+        position: fixed;
         background-color: white;
         left: 0;
         top: 2.2rem;
