@@ -3,7 +3,7 @@
 3-Pagina Index.
 4-Carrusel bootstrap en el Index .
 5-Flexbox index.
-6-
+6-Aplicamos Favicom y verificamos la navegacion.
 7-Github.
 8-Github.
 9 - Ralizamos las verificaciones con resultados positivos.
