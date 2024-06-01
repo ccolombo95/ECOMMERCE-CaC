@@ -56,30 +56,47 @@
     <main>
         <section id="presentation">
             <div class="container justify-container-center">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade " data-bs-ride="carousel">
-
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="carousel-item active" data-bs-interval="10000">
                             <img src="./assets/carrusel-1.jpg" class="d-block w-100 carousel-image" alt="...">
-                            <div class="carousel-caption  d-md-block">
-                                <h5>Alfajor Shop</h5>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Alfajor de Maicena</h5>
+                                <p>Suavidad delicada con dulce de leche entre capas, realzado con aroma a vainilla</p>
                             </div>
-
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
                             <img src="./assets/carrusel-2.jpg" class="d-block w-100 carousel-image" alt="...">
-                            <div class="carousel-caption d-md-block">
-                                <h5>Alfajor Shop</h5>
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="blanco">
+                                    <h5>Alfajor de Chocolate</h5>
+                                    <p>Intensidad indulgente de chocolate con contraste crujiente y dulce de leche suave.</p>
+                                </div>
                             </div>
- 
                         </div>
                         <div class="carousel-item">
                             <img src="./assets/carrusel-3.jpg" class="d-block w-100 carousel-image" alt="...">
-                            <div class="carousel-caption d-md-block">
-                                <h5>Alfajor Shop</h5>
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="blanco">
+                                    <h5>Delicia Fusionada</h5>
+                                    <p>Su suave textura y delicioso relleno, fusionando ingredientes como dulce de leche, chocolate o frutas.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -128,12 +145,13 @@
         </section>
         <div id="product-view-background" class=" ">
         </div>
+        <!-- PRODUCT VIEW -->
         <div id="product-view" class=" ">
             <div id="left-container">
                 <div class="product-card-image bg" ></div>
                 <div class="product-card-image sm first" style="background-image: url(./assets/product.jpg);"></div>
                 <div class="product-card-image sm second" style="background-image: url(./assets/product-2.jpg);"> </div>
-                <div class="product-card-image sm third" style="background-image: url(./assets/customized-products-image.jpg); ">  </div>
+                <!-- <div class="product-card-image sm third" style="background-image: url(./assets/customized-products-image.jpg); ">  </div> -->
             </div>
             <div id="right-container">
                 <div id="info-container">
