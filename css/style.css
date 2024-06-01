@@ -707,7 +707,7 @@ footer .redes .box {
 
 }
 
-footer .redes .box logo h2{
+footer .redes .box .logo h2{
     margin-bottom: 25px;
     font-size: 20px;
 }
@@ -744,7 +744,7 @@ footer .copy {
         max-width: 600px;
         margin: 0 1rem;
     }
-    footer .redes .box logo {
+    footer .redes .box .logo {
         text-align: center;
     }
 }
