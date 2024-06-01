@@ -4,3 +4,7 @@
 4-Carrusel bootstrap en el Index .
 5-Flexbox index.
 6-
+7-Github.
+8-Github.
+9 - Ralizamos las verificaciones con resultados positivos.
+10 - Aplicamos estos conceptos en el Index.
