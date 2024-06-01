@@ -12,7 +12,9 @@ form.d-flex {
 
     gap: 0;
 }
-
+.logo-img {
+    width: 100px;
+}
 
 @media (max-width: 992px) {
     .navbar .container-fluid {
@@ -27,14 +29,6 @@ form.d-flex {
     }
 }
 
-.carousel-image {
-    height: calc(100vh - 115px); 
-    width: 100%;
-    object-fit: cover;
-}
-.logo-img {
-    width: 100px;
-}
 
 /* GENERAL */
 body {
@@ -165,8 +159,17 @@ input, select {
 
 }
 
+/* presentation */
+.carousel-image {
+    height: 400px; 
+    width: 100%;
+    object-fit: cover;
+}
+.carousel-caption {
+    background-color: rgba(243, 237, 237, 0.477);
+    border-radius: 5px;
 
-
+}
 
 
 /* fin presentation */
