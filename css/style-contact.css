@@ -11,7 +11,7 @@
     color: black;
 }
 #customized-products-image {
-    background-image: url("/a"./assets/customized-products-image.jpg");
+    background-image: url("./../assets/customized-products-image.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 100%;

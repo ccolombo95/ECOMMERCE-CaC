@@ -1,97 +1,136 @@
-
 // IMAGES CARD
-let products =[
+let products = [
     {
         "nombre": "Pastel de chocolate",
         "descripcion": "Delicioso pastel de chocolate con cobertura de ganache.",
-        "precio": 20.99,
+        "precio": 350,
         "imagen1": "product.jpg",
-        "imagen2": "product.jpg",
-        "imagen3": "pastel_chocolate3.jpg"
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
     },
     {
         "nombre": "Pastel de chocolate",
         "descripcion": "Delicioso pastel de chocolate con cobertura de ganache.",
-        "precio": 20.99,
-        "imagen1": "pastel_chocolate1.jpg",
-        "imagen2": "pastel_chocolate2.jpg",
-        "imagen3": "pastel_chocolate3.jpg"
+        "precio": 350,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
     },
     {
         "nombre": "Tarta de queso",
         "descripcion": "Tarta de queso cremosa con base de galleta y mermelada de frutos rojos.",
-        "precio": 18.50,
-        "imagen1": "tarta_queso1.jpg",
-        "imagen2": "tarta_queso2.jpg",
-        "imagen3": "tarta_queso3.jpg"
+        "precio": 300,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
     },
     {
         "nombre": "Croissants",
         "descripcion": "Croissants de mantequilla, recién horneados y crujientes.",
-        "precio": 12.00,
-        "imagen1": "croissants1.jpg",
-        "imagen2": "croissants2.jpg",
-        "imagen3": "croissants3.jpg"
+        "precio": 200,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
     },
     {
         "nombre": "Macarons",
         "descripcion": "Macarons franceses en una variedad de sabores y colores.",
-        "precio": 15.99,
-        "imagen1": "macarons1.jpg",
-        "imagen2": "macarons2.jpg",
-        "imagen3": "macarons3.jpg"
+        "precio": 250,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
     },
     {
         "nombre": "Tarta de limón",
         "descripcion": "Tarta de limón con merengue italiano y base de masa quebrada.",
-        "precio": 19.50,
-        "imagen1": "tarta_limon1.jpg",
-        "imagen2": "tarta_limon2.jpg",
-        "imagen3": "tarta_limon3.jpg"
+        "precio": 300,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
+    },
+    {
+        "nombre": "Macarons",
+        "descripcion": "Macarons franceses en una variedad de sabores y colores.",
+        "precio": 250,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
+    },
+    {
+        "nombre": "Tarta de limón",
+        "descripcion": "Tarta de limón con merengue italiano y base de masa quebrada.",
+        "precio": 300,
+        "imagen1": "product.jpg",
+        "imagen2": "product-2.jpg",
+        "imagen3": "pastel_chocolate-2.jpg"
     }
-]
+];
 
-let arrayImage = ["./../assets/product.jpg", "./../assets/product-2.jpg"];
-let productCards = document.querySelectorAll(".product-card");
+document.addEventListener("DOMContentLoaded", () => {
+    let productsContainer = document.getElementById('products-container');
+    productsContainer.innerHTML = '';
 
-productCards.forEach(function(productCard) {
-    let imageCard = productCard.querySelector(".product-card-image");
-    let imageRoute = arrayImage[0];
+    products.forEach(product => {
+        let productCard = document.createElement('div');
+        productCard.classList.add('product-card');
 
-    imageCard.addEventListener("mouseenter", function(event) {
-        imageRoute = arrayImage[1];
-        imageCard.style.transition = "background-image 0.5s ease";
-        imageCard.style.backgroundImage = "url(" + imageRoute + ")";
-    });
+        // Ruta para las imágenes
+        let imagePath = window.location.pathname.includes('pages') ? './../assets/' : './assets/';
 
-    imageCard.addEventListener("mouseleave", function(event) {
-        imageRoute = arrayImage[0];
-        imageCard.style.transition = "background-image 0.5s ease";
-        imageCard.style.backgroundImage = "url(" + imageRoute + ")";
+        productCard.innerHTML = `
+            <div class="product-card-image" style="background-image: url(${imagePath}${product.imagen1});">
+                <span class="bag-shopping-sm"><i class="fa-solid fa-bag-shopping"></i></span>
+            </div>
+            <div class="product-card-text">
+                <a href="#" class="button-product-view">
+                    <div class="product-card-text-tittle">
+                        <h5>${product.nombre}</h5>
+                        <h5>$${product.precio}</h5>
+                    </div>
+                    <p>${product.descripcion}</p>
+                </a>
+            </div>
+        `;
+
+        productsContainer.appendChild(productCard);
+
+        //  efecto hover
+        let imageCard = productCard.querySelector(".product-card-image");
+
+        imageCard.addEventListener("mouseenter", function(event) {
+            imageCard.style.transition = "background-image 0.5s ease";
+            imageCard.style.backgroundImage = `url(${imagePath}${product.imagen2})`;
+        });
+
+        imageCard.addEventListener("mouseleave", function(event) {
+            imageCard.style.transition = "background-image 0.5s ease";
+            imageCard.style.backgroundImage = `url(${imagePath}${product.imagen1})`;
+        });
+        // PRODUCT PREVIEW
+        const productViewBackground = document.getElementById("product-view-background");
+        const productView = document.getElementById("product-view");
+        const buttonsProductView = document.querySelectorAll(".button-product-view");
+        const closeProductView = document.getElementById("close-i");
+
+        buttonsProductView.forEach(function(buttonProductView) {
+            buttonProductView.addEventListener("click", function(event){
+                productView.classList.add('active');
+                productViewBackground.classList.add('active');
+                closeProductView.addEventListener('click', function(event){
+                    productView.classList.remove('active');
+                    productViewBackground.classList.remove('active');
+                });
+                productViewBackground.addEventListener('click', function(event){
+                    productView.classList.remove('active');
+                    productViewBackground.classList.remove('active');
+                });
+            });
+
+        });
     });
 });
 
-// PRODUCT PREVIEW
-const productViewBackground = document.getElementById("product-view-background");
-const productView = document.getElementById("product-view");
-const buttonsProductView = document.querySelectorAll(".button-product-view");
-const closeProductView = document.getElementById("close-i");
 
-buttonsProductView.forEach(function(buttonProductView) {
-    buttonProductView.addEventListener("click", function(event){
-        productView.classList.add('active');
-        productViewBackground.classList.add('active');
-        closeProductView.addEventListener('click', function(event){
-            productView.classList.remove('active');
-            productViewBackground.classList.remove('active');
-        });
-        productViewBackground.addEventListener('click', function(event){
-            productView.classList.remove('active');
-            productViewBackground.classList.remove('active');
-        });
-    });
-
-});
 //Cambio de imagenes
 const bgElement = document.querySelector('.product-card-image.bg');
 const smElements = document.querySelectorAll('.product-card-image.sm');

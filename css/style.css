@@ -70,7 +70,7 @@ a {
     text-decoration: none !important;
 }
 input, select {
-    outline: none;
+    outline: none !important;
 }
 .punto-linea {
     display: inline-flex;
@@ -207,7 +207,7 @@ input, select {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
     margin: 1rem 0;
 }
@@ -404,7 +404,7 @@ form.product-options {
     margin: 1rem 0;
 }
 .product-options  .form-group .form-label{
-    transform: translateY(-15px);
+    transform: translateY(0);
 }
 .product-options  .form-group select,
 .product-options  .form-group input  {
@@ -435,6 +435,7 @@ form.product-options {
     align-items: center;
     margin-top: 1.5rem;
     gap: .3rem;
+
 }
 #product-view #right-container #info-container #button-container span {
     background: rgb(193, 156, 88);
@@ -444,8 +445,9 @@ form.product-options {
     align-self: center;
     font-size: 1.5rem;
     padding: .4rem 1rem;
-
-
+}
+#product-view #right-container #info-container #button-container a{
+    margin: 0;
 }
 #products-container .product-card .product-card-image span {
     background: rgb(193, 156, 88);
