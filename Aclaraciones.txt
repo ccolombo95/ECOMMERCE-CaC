@@ -1,0 +1,6 @@
+1- Inicio, Productos, Ofertas, Contactos.
+2- Aplicamos la consigna del Punto 2 en el Formulario de Contacto.
+3-Pagina Index.
+4-Carrusel bootstrap en el Index .
+5-Flexbox index.
+6-
