@@ -1,6 +1,57 @@
 
 // IMAGES CARD
-let arrayImage = ["./assets/product.jpg", "./assets/product-2.jpg"];
+let products =[
+    {
+        "nombre": "Pastel de chocolate",
+        "descripcion": "Delicioso pastel de chocolate con cobertura de ganache.",
+        "precio": 20.99,
+        "imagen1": "product.jpg",
+        "imagen2": "product.jpg",
+        "imagen3": "pastel_chocolate3.jpg"
+    },
+    {
+        "nombre": "Pastel de chocolate",
+        "descripcion": "Delicioso pastel de chocolate con cobertura de ganache.",
+        "precio": 20.99,
+        "imagen1": "pastel_chocolate1.jpg",
+        "imagen2": "pastel_chocolate2.jpg",
+        "imagen3": "pastel_chocolate3.jpg"
+    },
+    {
+        "nombre": "Tarta de queso",
+        "descripcion": "Tarta de queso cremosa con base de galleta y mermelada de frutos rojos.",
+        "precio": 18.50,
+        "imagen1": "tarta_queso1.jpg",
+        "imagen2": "tarta_queso2.jpg",
+        "imagen3": "tarta_queso3.jpg"
+    },
+    {
+        "nombre": "Croissants",
+        "descripcion": "Croissants de mantequilla, recién horneados y crujientes.",
+        "precio": 12.00,
+        "imagen1": "croissants1.jpg",
+        "imagen2": "croissants2.jpg",
+        "imagen3": "croissants3.jpg"
+    },
+    {
+        "nombre": "Macarons",
+        "descripcion": "Macarons franceses en una variedad de sabores y colores.",
+        "precio": 15.99,
+        "imagen1": "macarons1.jpg",
+        "imagen2": "macarons2.jpg",
+        "imagen3": "macarons3.jpg"
+    },
+    {
+        "nombre": "Tarta de limón",
+        "descripcion": "Tarta de limón con merengue italiano y base de masa quebrada.",
+        "precio": 19.50,
+        "imagen1": "tarta_limon1.jpg",
+        "imagen2": "tarta_limon2.jpg",
+        "imagen3": "tarta_limon3.jpg"
+    }
+]
+
+let arrayImage = ["./../assets/product.jpg", "./../assets/product-2.jpg"];
 let productCards = document.querySelectorAll(".product-card");
 
 productCards.forEach(function(productCard) {
