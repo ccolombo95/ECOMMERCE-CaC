@@ -165,9 +165,10 @@ input, select {
     width: 100%;
     object-fit: cover;
 }
-.carousel-caption {
+ .carousel-caption {
     background-color: rgba(243, 237, 237, 0.477);
     border-radius: 5px;
+    margin-bottom: 1.5rem;
 
 }
 .carousel-caption h5 {
@@ -177,6 +178,7 @@ input, select {
 .carousel-caption p {
     font-size: 16px;
 }
+
 
 
 /* fin presentation */
