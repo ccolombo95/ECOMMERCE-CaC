@@ -59,23 +59,20 @@
             <ul class="list-order">
                 <li class="order-li"><a href="#" class="order-link"><span class="line-link">-  </span>Precios más bajos</a></li>
                 <li class="order-li"><a href="#" class="order-link"><span class="line-link">-  </span>Precios más altos</a></li>
-                <li class="order-li"><a href="#" class="order-link"><span class="line-link">-  </span>Últimos agregados</a></li>
-                <li class="order-li"><a href="#" class="order-link"><span class="line-link">-  </span>Alguno más</a></li>
-                <li class="order-li"><a href="#" class="order-link"><span class="line-link">-  </span>Alguno más</a></li>
             </ul>
             <h4>FILTROS</h4>
             <ul class="list-filter">
+                <li style="margin-bottom: 1rem;"><a href="#" class="filter-link"><span class="line-link">-  </span>OFERTAS</a></li>
+             
+
                 <li><a href="#" class="filter-link"><span class="line-link">-  </span>Todos</a></li>
-                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Tortas y tartas (343)</a></li>
-                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Alfajores y macarrones (322)</a></li>
-                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Budines (43)</a></li>
-                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Cookies y cupcakes (43)</a></li>
+                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Tortas y tartas</a></li>
+                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Alfajores y macarrones</a></li>
+                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Budines</a></li>
+                <li><a href="#" class="filter-link"><span class="line-link">-  </span>Cookies y cupcakes</a></li>
                
             </ul>
-            <h4>PRECIO</h4>
-            <ul class="list-filter-price">
-                <li><a href="#">1000 ----------- 35k</a></li>
-            </ul>
+
         </aside>
         <section id="all-products-container">
 
@@ -95,8 +92,8 @@
         <div id="product-view" class=" ">
             <div id="left-container">
                 <div class="product-card-image bg" ></div>
-                <div class="product-card-image sm first" style="background-image: url(./assets/TartaDeManzana.jpg);"></div>
-                <div class="product-card-image sm second" style="background-image: url(./assets/TartaDeManzana3.jpg);"> </div>
+                <div class="product-card-image sm first" style="background-image: url();"></div>
+                <div class="product-card-image sm second" style="background-image: url();"> </div>
                 <!-- <div class="product-card-image sm third" style="background-image: url(./assets/customized-products-image.jpg); ">  </div> -->
             </div>
             <div id="right-container">
@@ -106,9 +103,10 @@
                     </span>
                     <div id="close-i"><i class="fa-solid fa-chevron-left" ></i><h6>VOLVER</h6></div>
                     <div class="info-product">
-                        <h2>Tarta de Manzana</h2> 
-                        <h3>$25.350,00</h3>
-                        <p>Hecha con manzanas frescas y jugosas, canela aromática para un toque cálido, azúcar moreno que aporta dulzura y profundidad, y una base de masa hojaldrada, crujiente y dorada.</p>
+                        <h2></h2> 
+                        <h3></h3>
+                        <span id="off" style="font-size:16px; color:red;margin-left:.5rem;"></span> 
+                        <p></p>
                     </div>
                     <form class="product-options">
                         <div class="form-group">
@@ -200,6 +198,7 @@
     <script src="./../js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
+        // Manejo de los enlaces de orden
         const orderLinks = document.querySelectorAll(".order-link");
         orderLinks.forEach(function(orderLink) {
             orderLink.addEventListener("click", function(event) {
@@ -212,21 +211,28 @@
                 });
             });
         });
-
+    
+        // Manejo de los enlaces de filtro
         const filterLinks = document.querySelectorAll(".filter-link");
         filterLinks.forEach(function(filterLink) {
             filterLink.addEventListener("click", function(event) {
-                filterLink.classList.toggle('selected');
+                event.preventDefault();  // Prevenir comportamiento predeterminado
+                filterLinks.forEach(function(link) {
+                    link.classList.remove('selected');
+                });
+                filterLink.classList.add('selected');
             });
         });
-        const asideBar= document.getElementById("aside-bar");
+    
+        // Manejo del aside bar
+        const asideBar = document.getElementById("aside-bar");
         const filterI = document.getElementById("filter-i");
-       
+    
         filterI.addEventListener("click", function(event) {
             asideBar.classList.toggle('active');
         });
-
     </script>
+    
 
     
 </body>

@@ -214,6 +214,16 @@ input, select {
     gap: 1rem;
 
 }
+@media screen and (max-width:450px) {
+    #daily-offers .container {
+
+        align-items: center;
+        
+        height: 200px;
+
+    
+    }
+}
 
 /* Fin dailey offers */
 /* PRODUCTS */
@@ -324,6 +334,7 @@ input, select {
     #products-container .product-card p,
     #products-container .product-card h5 {
         margin:.3rem 0;
+        font-size: 12px;
      
 }
 
@@ -340,7 +351,7 @@ input, select {
     top: 0;
 
     background:  rgba(193, 156, 88, 0.5);
-    width: 100%;
+    width: 98%;
     height: 100%;
 
 }
@@ -355,7 +366,7 @@ div#product-view {
     width: 90%;
     height: min-content;
     max-width: 1000px;
-    top: 15%;
+    top: 20%;
     padding: 1.5rem;
 
     background: white;
@@ -437,14 +448,15 @@ form.product-options {
     outline: none !important;
     padding: .3rem .5rem;
 }
-*/
+
 
 
 
 #product-view #right-container #info-container #close-i {
     cursor: pointer;
-    display: inline-flex;
+    display: inline-flex ;
     flex-direction: row;
+    
     align-items: center;
     gap: .4rem;
     color: rgba(193, 156, 88);
